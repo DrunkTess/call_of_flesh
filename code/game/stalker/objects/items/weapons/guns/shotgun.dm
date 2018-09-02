@@ -1,3 +1,6 @@
+/obj/item/weapon/gun/projectile/revolver
+	modifications = list("barrel_shotgun" = 0, "frame_shotgun" = 0, "grip_shotgun" = 0)
+
 /obj/item/weapon/gun/projectile/revolver/bm16  // Горизонталка
 	name = "BM-16"
 	desc = "Охотничье ружьё - горизонталка. Довольно мощное, в самый раз дл&#255; охоты."
@@ -16,6 +19,7 @@
 	spread = 12
 	damagelose = 0.3
 	distro = 25
+	can_scope = 1
 	weapon_weight = WEAPON_MEDIUM
 	fire_sound = 'sound/stalker/weapons/bm16_shot.ogg'
 	loadsound = 'sound/stalker/weapons/load/obrez_load.ogg'
@@ -61,7 +65,11 @@
 	spread = 6
 	damagelose = 0.15
 	distro = 10
+	can_scope = 1
 	weapon_weight = WEAPON_MEDIUM
+
+/obj/item/weapon/gun/projectile/shotgun
+	modifications = list("barrel_shotgun" = 0, "frame_shotgun" = 0, "grip_shotgun" = 0)
 
 /obj/item/weapon/gun/projectile/shotgun/ithaca  //  Ithaca M37
 	name = "Ithaca M37"
@@ -79,6 +87,7 @@
 	force = 15
 	damagelose = 0.3
 	distro = 25
+	can_scope = 0
 	weapon_weight = WEAPON_MEDIUM
 	//fire_sound = 'sound/stalker/weapons/winchester1300_shot.ogg'
 	loadsound = 'sound/stalker/weapons/load/chaser_load.ogg'
@@ -163,7 +172,7 @@
 	recoil = 1
 	w_class = 4
 	randomspread = 0
-	spread = 5
+	spread = 3
 	force = 15
 	damagelose = 0.1
 	weapon_weight = WEAPON_MEDIUM

@@ -122,7 +122,8 @@ var/global/image/fire_overlay = image("icon" = 'icons/effects/fire.dmi', "icon_s
 			slot_drone_storage\
 		)
 
-	var/list/modifications_ids = list()
+	var/list/modifications = list()
+	var/unique = 0
 
 /obj/item/proc/check_allowed_items(atom/target, not_inside, target_self)
 	if(((src in target) && !target_self) || ((!istype(target.loc, /turf)) && (!istype(target, /turf)) && (not_inside)) || is_type_in_list(target, can_be_placed_into))
@@ -227,7 +228,7 @@ var/global/image/fire_overlay = image("icon" = 'icons/effects/fire.dmi', "icon_s
 		var/mob/living/carbon/C = user
 		var/datum/data/record/sk = (find_record("sid", C.sid, data_core.stalkers))
 		if(sk && sk.fields["faction_s"] == "Traders")
-			for(var/datum/data/stalker_equipment/SE in sidormatitems)
+			for(var/datum/data/stalker_equipment/SE in real_sidormat_items)
 				if(SE.equipment_path == type)
 					user << "<span class ='notice'>This item costs [SE.sale_price]RU</span>"
 					break
